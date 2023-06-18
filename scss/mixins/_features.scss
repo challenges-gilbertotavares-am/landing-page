@@ -1,0 +1,96 @@
+@mixin col-in-grid-gt-1($cols) {
+	// Last line.
+	&:nth-last-child(-n + #{$cols}) {
+		padding-bottom: 0;
+	}
+
+	// Not first line.
+	&:nth-child(n + #{$cols + 1}) {
+		border-top: var(--border-width) solid var(--border-color);
+	}
+
+	// End column.
+	&:nth-child(#{$cols}n) {
+		padding-right: 0;
+		border-left: var(--border-width) solid var(--border-color);
+	}
+
+	// Start column.
+	&:first-child,
+	&:nth-child(#{$cols}n + 1) {
+		padding-left: 0;
+	}
+}
+
+@mixin col-in-grid-gt-2($cols) {
+	$cols: $cols - 1;
+
+	// End column.
+	&:nth-child(#{$cols}n) {
+		padding-right: calc(var(--gutter-x) * .5);
+		border-left: 0;
+	}
+
+	// Start column.
+	&:first-child,
+	&:nth-child(#{$cols}n + 1) {
+		padding-left: calc(var(--gutter-x) * .5);
+	}
+}
+
+@mixin col-in-grid-eq-3($cols) {
+	--middle-width: #{percentage(divide(352, 960))};
+	--start-end-width: calc((100% - var(--middle-width)) * .5);
+
+	// Start column.
+	&:first-child,
+	&:nth-child(#{$cols}n + 1) {
+		padding-left: 0;
+		border-right: var(--border-width) solid var(--border-color);
+	}
+
+	// Start and end columns.
+	&:first-child,
+	&:nth-child(#{$cols}n + 1),
+	&:nth-child(#{$cols}n) {
+		--width: var(--start-end-width);
+
+		width: calc(var(--width) - var(--border-width));
+	}
+
+	// End column.
+	&:nth-child(#{$cols}n) {
+		padding-right: 0;
+		border-left: var(--border-width) solid var(--border-color);
+	}
+
+	// Middle column.
+	&:nth-child(#{$cols}n + 2) {
+		--width: var(--middle-width);
+
+		width: var(--width);
+	}
+}
+
+@mixin col-in-grid($cols) {
+	// More than one columns.
+	@if $cols > 1 {
+		@include col-in-grid-gt-1($cols);
+	}
+
+	// More than two columns.
+	@if $cols > 2 {
+		@include col-in-grid-gt-2($cols);
+	}
+
+	// First line.
+	&:nth-child(-n + #{$cols}) {
+		padding-top: 0;
+		border-top: 0;
+	}
+
+	// Exactely three columns.
+	@if 3 == $cols {
+		@include col-in-grid-eq-3($cols);
+	}
+}

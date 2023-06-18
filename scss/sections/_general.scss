@@ -1,0 +1,86 @@
+.intro,
+.features,
+.reviews,
+.control,
+.screenshots,
+.alternative,
+.easy {
+	padding-top: var(--section-py);
+	padding-bottom: var(--section-py);
+
+	@include media-breakpoint-down(md) {
+		--section-py: var(--section-py-sm);
+	}
+}
+
+.intro,
+.control {
+	background-color: $light;
+}
+
+.intro .description,
+.btns {
+	max-width: 630px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.features,
+.reviews,
+.alternative,
+.easy {
+	h2 {
+		@include visually-hidden();
+	}
+}
+
+.reviews,
+.control,
+.screenshots {
+
+	.row {
+		--gutter-x: 50px;
+		--gutter-y: calc(var(--gutter-x) * .5);
+	}
+}
+
+.control,
+.screenshots {
+	a {
+		display: block;
+
+		@media (hover: hover) {
+
+			&:hover {
+
+				img {
+					margin: -10px 0 10px;
+					filter: drop-shadow(0 15px 15px rgba($black, .2));
+				}
+			}
+		}
+	}
+
+	img {
+		@include img-fluid();
+		filter: drop-shadow(0 5px 15px rgba($black, .15));
+		border-radius: $border-radius;
+		transition: filter .2s ease-in-out, margin .2s ease-in-out;
+	}
+}
+
+.control,
+.easy {
+	@include font-size($font-size-base * 1.125);
+}
+
+.alternative,
+.easy {
+	text-align: center;
+
+	.lead {
+		@include font-size($h3-font-size);
+		font-weight: $headings-font-weight;
+		color: var(--heading-color);
+	}
+}

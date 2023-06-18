@@ -1,0 +1,30 @@
+.intro {
+	text-align: center;
+
+	@include media-breakpoint-up(md) {
+		padding-bottom: calc(#{$section-py} * .5);
+	}
+
+	.description {
+		--margin-bottom: 20px;
+		@extend %lead;
+		margin-bottom: var(--margin-bottom);
+		line-height: 1.4;
+
+		@include media-breakpoint-down(sm) {
+			@include font-size($lead-font-size * .9);
+		}
+
+		@include media-breakpoint-up(sm) {
+			--margin-bottom: 40px;
+		}
+	}
+
+	.btns {
+		margin-bottom: 0;
+	}
+
+	.btn-soft-secondary {
+		--btn-bg: #{$white};
+	}
+}

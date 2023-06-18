@@ -1,0 +1,70 @@
+.fas,
+.fal,
+.star-rating {
+	display: inline-block;
+	font-family: "Font Awesome 5 Pro";
+	font-style: normal;
+	font-variant: normal;
+	line-height: 1;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: auto;
+}
+.fas,
+.star-rating span {
+	font-weight: 900;
+}
+.fal,
+.star-rating {
+	font-weight: 300;
+}
+.fa-eye::before {
+	content: "\f06e";
+}
+.fa-paint-brush::before {
+	content: "\f1fc";
+}
+.fa-swatchbook::before {
+	content: "\f5c3";
+}
+.fa-image::before {
+	content: "\f03e";
+}
+.fa-smile-beam::before {
+	content: "\f5b8";
+}
+.fa-check-circle::before {
+	content: "\f058";
+}
+.fa-envelope::before {
+	content: "\f0e0";
+}
+.fa-poll::before {
+	content: "\f681";
+}
+.fa-id-badge::before {
+	content: "\f2c1";
+}
+.fa-play::before {
+	content: "\f04b";
+}
+.star-rating::before,
+.star-rating span::before {
+	content: "\f005\f005\f005\f005\f005";
+}
+@font-face {
+	font-family: "Font Awesome 5 Pro";
+	font-style: normal;
+	font-weight: 300;
+	src: url("https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-light-300.eot");
+	src: url("https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-light-300.eot?#iefix") format("embedded-opentype"), url("https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-light-300.woff2") format("woff2"), url("https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-light-300.woff") format("woff"), url("https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-light-300.ttf") format("truetype"), url("https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-light-300.svg#fontawesome") format("svg");
+	font-display: swap;
+}
+@font-face {
+	font-family: "Font Awesome 5 Pro";
+	font-style: normal;
+	font-weight: 900;
+	src: url("https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot");
+	src: url("https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff2") format("woff2"), url("https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff") format("woff"), url("https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.ttf") format("truetype"), url("https://pro.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.svg#fontawesome") format("svg");
+	font-display: swap;
+}

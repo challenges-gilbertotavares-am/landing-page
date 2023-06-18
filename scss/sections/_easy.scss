@@ -1,0 +1,16 @@
+.easy {
+	@include font-size($font-size-base * 1.125);
+	line-height: $headings-line-height;
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	.lead {
+		line-height: $headings-line-height * 1.04166667;
+	}
+
+	a {
+		display: inline-block;
+	}
+}

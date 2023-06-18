@@ -1,0 +1,59 @@
+{
+	"id": "backstop_default",
+	"viewports": [
+		{
+			"label": "desktop",
+			"width": 1400,
+			"height": 974
+		},
+		{
+			"label": "tablet",
+			"width": 800,
+			"height": 1280
+		},
+		{
+			"label": "mobile",
+			"width": 408,
+			"height": 813
+		}
+	],
+	"onBeforeScript": "puppet/onBefore.js",
+	"onReadyScript": "puppet/onReady.js",
+	"scenarios": [
+		{
+			"label": "Homepage",
+			"url": "https://challenges-gilbertotavares-am.github.io/landing-page/",
+			"referenceUrl": "",
+			"readyEvent": "",
+			"readySelector": "",
+			"delay": 0,
+			"hideSelectors": [],
+			"removeSelectors": [],
+			"hoverSelector": "",
+			"clickSelector": "",
+			"postInteractionWait": 0,
+			"selectors": [],
+			"selectorExpansion": true,
+			"expect": 0,
+			"misMatchThreshold": 0,
+			"requireSameDimensions": true
+		}
+	],
+	"paths": {
+		"bitmaps_reference": "test/backstop_data/bitmaps_reference",
+		"bitmaps_test": "test/backstop_data/bitmaps_test",
+		"engine_scripts": "test/backstop_data/engine_scripts",
+		"html_report": "test/backstop_data/html_report",
+		"ci_report": "test/backstop_data/ci_report"
+	},
+	"report": [ "browser" ],
+	"engine": "puppeteer",
+	"engineOptions": {
+		"headless": "new",
+		"args": [ "--no-sandbox" ]
+	},
+	"asyncCaptureLimit": 5,
+	"asyncCompareLimit": 50,
+	"debug": false,
+	"debugWindow": false
+}

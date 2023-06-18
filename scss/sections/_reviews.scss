@@ -1,0 +1,56 @@
+.reviews {
+	background-image: linear-gradient(180deg, $gray-100, $white);
+
+	.row {
+		padding-top: calc(var(--gutter-y) * 2);
+		padding-bottom: calc(var(--gutter-y) * 2);
+
+		@include media-breakpoint-down(md) {
+			row-gap: 0;
+		}
+
+		@include media-breakpoint-up(md) {
+			margin-bottom: calc(var(--gutter-y) * 2);
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-bottom: 0;
+		}
+	}
+
+	.col {
+		@include make-col(6);
+
+		@include media-breakpoint-up(lg) {
+			@include make-col(2);
+		}
+	}
+
+	.review {
+		--margin-bottom: var(--gutter-y);
+		margin-bottom: var(--margin-bottom);
+
+		@include media-breakpoint-up(md) {
+			--margin-bottom: 0;
+		}
+
+		@include media-breakpoint-up(lg) {
+			padding-bottom: calc(#{$review-spacer-y} - 1px);
+
+			> * {
+				width: 100%;
+				max-width: 226px;
+				margin-right: auto;
+				margin-left: auto;
+			}
+		}
+	}
+
+	.btns {
+		margin-bottom: var(--gutter-y);
+
+		@include media-breakpoint-up(md) {
+			--gutter-y: var(--gutter-x);
+		}
+	}
+}

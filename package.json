@@ -1,0 +1,49 @@
+{
+	"name": "gilberto-tavares",
+	"version": "1.0.0",
+	"description": "Awesome Motive Developer Applicant Challenge part 2",
+	"author": "Gilberto Tavares",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"gilberto",
+		"tavares"
+	],
+	"homepage": "https://github.com/challenges-gilbertotavares-am/landing-page#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/challenges-gilbertotavares-am/landing-page.git"
+	},
+	"bugs": {
+		"url": "https://github.com/challenges-gilbertotavares-am/landing-page/issues"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^26.6.0",
+		"backstopjs": "^6.2.2",
+		"bootstrap": "^5.3.0",
+		"htmlhint": "^1.1.4",
+		"jquery": "^3.7.0",
+		"jsdom": "^22.1.0",
+		"magnific-popup": "^1.1.0",
+		"npm-run-all": "^4.1.5",
+		"stylelint": "^15.8.0",
+		"stylelint-config-recess-order": "^4.2.0",
+		"stylelint-config-standard": "^33.0.0",
+		"stylelint-config-standard-scss": "^9.0.0",
+		"stylelint-scss": "^5.0.1",
+		"stylelint-stylistic": "^0.4.2"
+	},
+	"scripts": {
+		"build": "wp-scripts build --webpack-no-externals",
+		"format": "wp-scripts format \"./**/*{.html,.json}\"",
+		"hint:html": "htmlhint \"./**/*.html\"",
+		"lint:css": "wp-scripts lint-style",
+		"lint:css:fix": "wp-scripts lint-style --fix",
+		"lint:js": "wp-scripts lint-js",
+		"lint:js:fix": "wp-scripts lint-js --fix",
+		"lint:pkg-json": "wp-scripts lint-pkg-json",
+		"browser:sync": "browser-sync start --server --files \"./**/*.html\" \"build\"",
+		"start": "npm-run-all --parallel start:* browser:sync",
+		"start:wp-scripts": "wp-scripts start --webpack-no-externals",
+		"test": "wp-scripts test-unit-js"
+	}
+}

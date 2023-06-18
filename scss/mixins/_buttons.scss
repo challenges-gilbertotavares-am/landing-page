@@ -1,0 +1,31 @@
+// Button variants
+
+@mixin button-variant(
+	$background,
+	$border: rgba($black, .2),
+	$color: color-contrast($background),
+	$hover-background: if($color == $color-contrast-light, darken($background, $btn-hover-bg-darken-amount), lighten($background, $btn-hover-bg-lighten-amount))
+) {
+	--btn-color: #{$color};
+	--btn-bg: #{$background};
+	--btn-border-color: #{$border};
+	--btn-hover-bg: #{$hover-background};
+}
+
+@mixin button-soft-variant(
+	$color,
+	$bg: if(color-contrast($color) == $color-contrast-light, darken($color-contrast-light, $btn-soft-bg-hsl-amount), lighten($color-contrast-dark, $btn-soft-bg-hsl-amount)),
+	$border-color: if(color-contrast($color) == $color-contrast-light, darken($color-contrast-light, $btn-soft-border-color-hsl-amount), $color-contrast-dark)
+) {
+	--btn-color: #{$color};
+	--btn-bg: #{$bg};
+	--btn-border-color: #{$border-color};
+	--btn-hover-bg: #{darken($bg, $btn-hover-bg-darken-amount)};
+	--btn-hover-border-color: #{$border-color};
+}
+
+@mixin button-size($padding-y, $padding-x, $font-size) {
+	--btn-padding-y: #{$padding-y};
+	--btn-padding-x: #{$padding-x};
+	@include rfs($font-size, --btn-font-size);
+}

@@ -1,0 +1,38 @@
+:root {
+	// Note: Custom variable values only support SassScript inside `#{}`.
+
+	// Fonts
+
+	// Note: Use `inspect` for lists so that quoted items keep the quotes.
+	// See https://github.com/sass/sass/issues/2383#issuecomment-336349172
+	--font-sans-serif: #{inspect($font-family-sans-serif)};
+	--font-serif: #{inspect($font-family-serif)};
+	--font-system: #{inspect($font-family-system)};
+
+	// Root and body
+	--body-font-family: #{inspect($font-family-base)};
+	@include rfs($font-size-base, --body-font-size);
+	--body-font-weight: #{$font-weight-base};
+	--body-line-height: #{$line-height-base};
+
+	--body-color: #{$body-color};
+	--body-bg: #{$body-bg};
+
+	--heading-color: #{$headings-color};
+	--headings-margin-bottom: #{$headings-margin-bottom};
+
+	--link-color: #{$link-color};
+	--link-decoration: #{$link-decoration};
+
+	--link-hover-color: #{$link-hover-color};
+
+	--border-width: #{$border-width};
+	--border-color: #{$border-color};
+
+	--border-radius: #{$border-radius};
+	--border-radius-sm: #{$border-radius-sm};
+	--border-radius-pill: #{$border-radius-pill};
+
+	--section-py: #{$section-py};
+	--section-py-sm: #{$section-py-sm};
+}

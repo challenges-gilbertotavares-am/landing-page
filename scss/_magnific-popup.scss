@@ -1,0 +1,19 @@
+$mfp-iframe-ratio:                    divide(9, 16) !default;                       // Ratio of iframe (9/16 = widescreen, 3/4 = standard, etc.)
+
+@import "magnific-popup/src/css/main";
+
+img.mfp-img {
+	max-width: 1200px;
+
+	figure & {
+		max-width: calc(min(95vw, 1200px));
+	}
+}
+
+.mfp-image-holder,
+.mfp-iframe-holder {
+
+	.mfp-close {
+		color: $gray-800;
+	}
+}

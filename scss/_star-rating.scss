@@ -1,0 +1,23 @@
+.star-rating {
+	position: relative;
+	width: divide(90rem, 16);
+	color: $yellow;
+	white-space: nowrap;
+
+	&,
+	span {
+		height: 1em;
+		overflow: hidden;
+	}
+
+	span {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
+.review .star-rating {
+	margin-left: auto;
+	font-size: 1rem;
+}

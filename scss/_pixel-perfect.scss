@@ -1,0 +1,9 @@
+.alternative {
+	margin-bottom: 1px;
+
+	.feature {
+		@include media-breakpoint-up(lg) {
+			--gutter-x: 106px;
+		}
+	}
+}

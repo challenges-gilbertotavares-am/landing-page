@@ -1,0 +1,58 @@
+//
+// Base styles
+//
+
+.review {
+	--review-spacer-y: #{$review-spacer-y};
+	--review-spacer-x: #{$review-spacer-x};
+	--review-border-width: #{$review-border-width};
+	--review-border-color: #{$review-border-color};
+	--review-border-radius: #{$review-border-radius};
+	--review-color: #{$review-color};
+	--review-bg: #{$review-bg};
+	--review-caption-font-size: #{$review-caption-font-size};
+	--review-caption-line-height: #{$review-caption-line-height};
+	--review-caption-color: #{$review-caption-color};
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	padding: var(--review-spacer-y) var(--review-spacer-x);
+	color: var(--review-color);
+	word-wrap: break-word;
+	background-color: var(--review-bg);
+	background-clip: border-box;
+	border: var(--review-border-width) solid var(--review-border-color);
+	border-radius: var(--review-border-radius);
+
+	blockquote {
+		margin-bottom: $paragraph-margin-bottom * 1.06666667;
+
+		> :last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	figcaption {
+		display: flex;
+		align-items: center;
+		padding-left: divide(1em, 14);
+		line-height: var(--review-caption-line-height);
+		color: var(--review-caption-color);
+		@include font-size(var(--review-caption-font-size));
+
+		&,
+		> * {
+			vertical-align: middle;
+		}
+
+		span {
+			display: inline-block;
+		}
+
+		&::before {
+			margin-right: divide(3em, 14);
+			content: "- ";
+		}
+	}
+}

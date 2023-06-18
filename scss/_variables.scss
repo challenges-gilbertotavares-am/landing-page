@@ -1,0 +1,219 @@
+// Variables
+
+// Color system
+
+$white:    #fff !default;
+$gray-100: #f8f8f8 !default;
+$gray-300: #ddd !default;
+$gray-400: #bbb !default;
+$gray-500: #aaa !default;
+$gray-600: #777 !default;
+$gray-700: #444 !default;
+$gray-800: #333 !default;
+$black:    #000 !default;
+
+$orange:  #e27730 !default;
+$blue:    #036aab !default;
+$yellow:  #fdb82c !default;
+$green:   #47b450 !default;
+
+$primary:       $orange !default;
+$secondary:     $gray-600 !default;
+$light:         $gray-100 !default;
+$gray:          $gray-400 !default;
+
+$btn-colors: (
+	"primary": $primary,
+) !default;
+
+$btn-soft-colors: (
+	"secondary": $secondary,
+) !default;
+
+// Characters which are escaped by the escape-svg function
+$escaped-characters: (
+	("<", "%3c"),
+	(">", "%3e"),
+	("#", "%23"),
+	("(", "%28"),
+	(")", "%29"),
+) !default;
+
+// The contrast ratio to reach against white, to determine if color changes
+// from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
+// See https://www.w3.org/TR/WCAG15/#visual-audio-contrast-contrast
+$min-contrast-ratio:  1.9 !default;
+
+// Customize the light and dark text colors for use in our color contrast
+// function.
+$color-contrast-dark:      $black !default;
+$color-contrast-light:     $white !default;
+
+// Body
+
+$body-text-align:           null !default;
+$body-color:                $gray-600 !default;
+$body-bg:                   $white !default;
+
+$body-emphasis-color:       $gray-700 !default;
+
+// Links
+
+$link-color:                              $blue !default;
+$link-decoration:                         underline !default;
+$link-lighten-amount:                     15% !default;
+$link-hover-color:                        lighten($link-color, $link-lighten-amount) !default;
+
+// Paragraphs
+
+$paragraph-margin-bottom:   .9375rem !default;
+
+
+// Grid breakpoints
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 682px,
+	lg: 1024px
+) !default;
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+
+// Grid containers
+
+$container-max-widths: (
+	sm: 1000px
+) !default;
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+
+// Grid columns
+
+$grid-columns:                6 !default;
+$grid-gutter-width:           2.5rem !default;
+
+// Container padding
+
+$container-padding-x: $grid-gutter-width !default;
+
+// Components
+
+$border-width:                1px !default;
+$border-color:                $gray-300 !default;
+
+$border-radius:               .375rem !default;
+$border-radius-sm:            .1875rem !default;
+$border-radius-pill:          50rem !default;
+
+$box-shadow-lg:               0 .625rem 3.125rem rgba($black, .15) !default;
+
+// Typography
+
+$font-family-system:          system-ui, -apple-system, "Segoe UI", roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif:      lato, system-ui, -apple-system, "Segoe UI", roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-serif:           arvo, serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-base:            var(--font-sans-serif) !default;
+
+// $font-size-base affects the font size of the body text
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-sm:                $font-size-base * .875 !default;
+$font-size-lg:                $font-size-base * 1.25 !default;
+
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+
+$font-weight-base:            $font-weight-normal !default;
+
+$line-height-base:            1.5 !default;
+
+$h1-font-size:                $font-size-base * 3 !default;
+$h2-font-size:                $font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 1.5 !default;
+
+$headings-margin-bottom:      20px !default;
+$headings-font-weight:        $font-weight-bold !default;
+$headings-line-height:        1.2 !default;
+$headings-color:              $body-emphasis-color !default;
+
+$lead-font-size:              $font-size-base * 1.25 !default;
+$lead-font-weight:            null !default;
+
+$sub-sup-font-size:           .75em !default;
+
+
+// Buttons
+
+$btn-color:                   var(--body-color) !default;
+$btn-padding-y:               .75rem !default;
+$btn-padding-x:               $btn-padding-y !default;
+$btn-font-size:               null !default;
+$btn-line-height:             1 !default;
+
+$btn-padding-y-lg:            1.3125rem !default;
+$btn-padding-x-lg:            $btn-padding-y-lg * 2 !default;
+$btn-font-size-lg:            $font-size-lg !default;
+
+$btn-border-width:            var(--border-width) !default;
+
+$btn-font-weight:             $font-weight-bold !default;
+
+// Allows for customizing button radius independently from global border
+// radius
+$btn-border-radius:           var(--border-radius-sm) !default;
+
+$btn-transition:              background-color .1s ease-in-out, border-color .1s ease-in-out !default;
+
+$btn-hover-bg-darken-amount:       8% !default;
+$btn-hover-bg-lighten-amount:      8% !default;
+$btn-hover-border-darken-amount:   8% !default;
+$btn-hover-border-lighten-amount:  8% !default;
+
+$btn-soft-bg-hsl-amount:           2.8% !default;
+$btn-soft-border-color-hsl-amount: 13.4% !default;
+
+// Reviews
+
+$review-spacer-y:                     29px !default;
+$review-spacer-x:                     $review-spacer-y !default;
+$review-border-width:                 var(--border-width) !default;
+$review-border-color:                 var(--border-color) !default;
+$review-border-radius:                var(--border-radius) !default;
+$review-height:                       null !default;
+$review-color:                        $body-color !default;
+$review-caption-color:                lighten($body-color, 20%) !default;
+$review-caption-font-size:            divide(14em, 16) !default;
+$review-caption-line-height:          1.2 !default;
+$review-bg:                           color-contrast($review-color) !default;
+
+
+// Badges
+
+$badge-font-size:                   .75em !default;
+$badge-font-size-sup:               $font-size-base * .625 !default;
+$badge-font-weight:                 $font-weight-bold !default;
+$badge-bg:                          $gray !default;
+$badge-color:                       color-contrast($badge-bg) !default;
+$badge-padding-y:                   .6em !default;
+$badge-padding-x:                   1.05em !default;
+$badge-border-radius:               var(--border-radius-pill) !default;
+$badge-line-height:                 1.2 !default;
+
+$rfs-breakpoint: 1024px !default;
+
+// Sections
+
+$section-py:     50px !default;
+$section-py-sm:  30px !default;
+
+// Play button
+
+
+$play-bg:           $gray-600 !default;
+$play-border-width: percentage(divide(7, 124)) !default;
+$play-icon-size:    percentage(divide(57, 110)) !default;
+$play-color:        color-contrast($play-bg) !default;
+$play-icon:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='#{$play-color}' d='M15.17 9.477 4.213 15.765c-.996.56-2.179-.125-2.179-1.308V1.51c0-1.12 1.183-1.805 2.18-1.307l10.956 6.66c1.058.623 1.058 2.055 0 2.615z'/></svg>") !default;

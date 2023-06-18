@@ -1,0 +1,8 @@
+.screenshots {
+
+	.col {
+		@include media-breakpoint-up(md) {
+			@include make-col(3);
+		}
+	}
+}

@@ -1,0 +1,23 @@
+.feature {
+	text-align: center;
+
+	@include media-breakpoint-down(md) {
+		> * {
+			max-width: 250px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+
+	.icon {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 20px;
+		font-size: $h1-font-size;
+		color: $primary;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}

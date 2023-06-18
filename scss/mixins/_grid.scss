@@ -1,0 +1,36 @@
+// Grid system
+//
+// Generate semantic grid columns with these mixins.
+
+@mixin make-row($gutter: $grid-gutter-width) {
+	--gutter-x: #{$gutter};
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: var(--gutter-y);
+	column-gap: var(--gutter-x);
+	justify-content: space-between;
+}
+
+@mixin make-col-ready() {
+	// Add box sizing if only the grid is loaded
+	box-sizing: if(variable-exists(include-column-box-sizing) and $include-column-box-sizing, border-box, null);
+	// Prevent columns from becoming too narrow when at smaller grid tiers by
+	// always setting `width: 100%;`. This works because we set the width
+	// later on to override this initial width.
+	flex-shrink: 0;
+	width: 100%;
+	max-width: 100%; // Prevent `.col-auto`, `.col` (& responsive variants) from breaking out the grid
+}
+
+@mixin make-col($size: false, $columns: $grid-columns) {
+	@if $size {
+		--inner-gutters: calc((var(--gutter-x) * #{divide($columns, $size)}) - var(--gutter-x));
+		--inner-gutter: calc(var(--inner-gutters) * #{divide($size, $columns)});
+		flex: 0 0 auto;
+		width: calc(#{percentage(divide($size, $columns))} - var(--inner-gutter));
+
+	} @else {
+		flex: 1 1 0;
+		max-width: 100%;
+	}
+}

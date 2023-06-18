@@ -1,0 +1,89 @@
+.play {
+	--play-bg: #{$play-bg};
+	--play-color: #{$play-color};
+	--play-border-width: #{$play-border-width};
+	--play-icon-size: #{$play-icon-size};
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: clamp(2.8125rem, 15%, 7.75rem);
+	background-color: var(--play-color);
+	filter: drop-shadow(0 .3125rem 1.5625rem rgba($black, .15));
+	border-radius: 50%;
+	transition: filter .5s ease-in-out;
+	transform: translate(-50%, -50%);
+
+	&::before {
+		display: block;
+		padding-top: 100%;
+		content: "";
+	}
+
+	&::after {
+		position: absolute;
+		top: var(--play-border-width);
+		right: var(--play-border-width);
+		bottom: var(--play-border-width);
+		left: var(--play-border-width);
+		display: block;
+		content: "";
+		background-color: var(--play-bg);
+		background-image: escape-svg($play-icon);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: var(--play-icon-size) var(--play-icon-size);
+		border-radius: inherit;
+	}
+
+	> .fas {
+		display: none;
+	}
+}
+
+.video {
+	position: relative;
+	overflow: hidden;
+	border-radius: $border-radius;
+	box-shadow: $box-shadow-lg;
+	transition: box-shadow .2s ease-in-out;
+
+	&:hover {
+		box-shadow: 0 .625rem 3.75rem $gray-500;
+	}
+
+	a {
+		position: relative;
+		display: block;
+	}
+
+	img {
+		@include img-fluid();
+	}
+
+	&:hover .play {
+		filter: drop-shadow(0 0 1.875rem $white);
+	}
+}
+
+.video-holder {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 100%;
+	transform: translate(-50%, -50%);
+
+	&::before {
+		display: block;
+		padding-top: percentage(divide(16, 9));
+		content: "";
+	}
+
+	> * {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}

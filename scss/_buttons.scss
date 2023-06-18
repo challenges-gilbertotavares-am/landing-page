@@ -1,0 +1,79 @@
+.btn {
+	--btn-padding-x: #{$btn-padding-x};
+	--btn-padding-y: #{$btn-padding-y};
+	@include rfs($btn-font-size, --btn-font-size);
+	--btn-font-weight: #{$btn-font-weight};
+	--btn-line-height: #{$btn-line-height};
+	--btn-color: #{$btn-color};
+	--btn-bg: transparent;
+	--btn-border-width: #{$btn-border-width};
+	--btn-border-color: transparent;
+	--btn-border-radius: #{$btn-border-radius};
+	display: inline-block;
+	padding: var(--btn-padding-y) var(--btn-padding-x);
+	font-weight: var(--btn-font-weight);
+	line-height: var(--btn-line-height);
+	color: var(--btn-color);
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	user-select: none;
+	background-color: var(--btn-bg);
+	border: var(--btn-border-width) solid var(--btn-border-color);
+	border-radius: var(--btn-border-radius);
+	transition: $btn-transition;
+	@include font-size(var(--btn-font-size));
+
+	&:hover {
+		background-color: var(--btn-hover-bg);
+	}
+
+	&:focus-visible {
+		background-color: var(--btn-hover-bg);
+	}
+}
+
+
+//
+// Alternate buttons
+//
+
+@each $color, $value in $btn-colors {
+	.btn-#{$color} {
+		@include button-variant($value);
+	}
+}
+
+@each $color, $value in $btn-soft-colors {
+	.btn-soft-#{$color} {
+		@include button-soft-variant($value);
+	}
+}
+
+//
+// Button Sizes
+//
+
+.btn-lg {
+	@include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg);
+}
+
+.btns {
+	@include make-row(50px);
+	--gutter-y: calc(var(--gutter-x) * .5);
+
+	@include media-breakpoint-down(md) {
+		--gutter-y: calc(var(--gutter-x) * .4);
+		width: calc(100% - var(--gutter-x));
+	}
+
+	.btn {
+		@include make-col-ready();
+		@include make-col(6);
+
+		@include media-breakpoint-up(md) {
+			@include make-col(3);
+		}
+	}
+}

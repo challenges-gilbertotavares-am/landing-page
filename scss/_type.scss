@@ -1,0 +1,8 @@
+%lead {
+	@include font-size($lead-font-size);
+	font-weight: $lead-font-weight;
+}
+
+.lead {
+	@extend %lead;
+}

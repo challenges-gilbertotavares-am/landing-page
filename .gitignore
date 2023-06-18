@@ -1,0 +1,4 @@
+node_modules/
+.cache
+test/backstop_data/*
+!test/backstop_data/bitmaps_reference

@@ -1,0 +1,20 @@
+{
+	"name": "Form Landing Pages",
+	"short_name": "Form Pages",
+	"description": "Create distraction-free form landing pages for WordPress.",
+	"start_url": "/landing-page/",
+	"scope": "/landing-page/",
+	"display": "standalone",
+	"background_color": "#ffffff",
+	"theme_color": "#e27730",
+	"icons": [
+		{
+			"src": "images/favicon/cropped-sullie-favicon-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		}
+	],
+	"orientation": "portrait",
+	"prefer_related_applications": false,
+	"related_applications": []
+}

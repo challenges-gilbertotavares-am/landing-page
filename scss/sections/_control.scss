@@ -1,0 +1,41 @@
+.control {
+	margin-bottom: 50px;
+	line-height: $line-height-base * 1.03703704;
+
+	@include media-breakpoint-down(md) {
+		text-align: center;
+	}
+
+	.row {
+		padding-top: var(--section-py);
+		padding-bottom: var(--section-py);
+
+		> * {
+			@include make-col(6);
+
+			@include media-breakpoint-up(md) {
+				@include make-col(3);
+
+				&:first-child {
+					width: calc(#{percentage(divide(457 + 25, 960))} - var(--inner-gutter));
+				}
+
+				&:last-child {
+					width: calc(#{percentage(divide(453 + 25, 960))} - var(--inner-gutter));
+				}
+			}
+		}
+	}
+
+	img {
+
+		@include media-breakpoint-down(md) {
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
